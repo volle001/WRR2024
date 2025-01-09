@@ -45,7 +45,7 @@ cols=101; %number of equal spaced colums in domain
 topslope=0.0005;% the water table slope
 foreslope = 0.05;% the foreset slope 0.05
 
-Delx=Breath/(cols-1); % [m] Fixed width between columns (300 m)
+Delx=Breath/(cols-1); % [m] Fixed width between columns (3000 m)
 xcols=linspace(0,Breath,cols); %x-locations of columns
 AR=80; %Aspect ratio of elements  AR=xdim/ydim
 Dely=Delx/AR;% [m] Typical height of an element 37.5 m
