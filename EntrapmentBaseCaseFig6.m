@@ -27,7 +27,7 @@
 %Submitted to Water Resources Research 
 
 %THE CURRENT CODE IS SET TO RECOVER FIGURE 6B--in that paper 
-%Computation elapse time on a Macbook is ~5mins
+%Computation elapse time on a Macbook is ~1min
 
 clear all
 
@@ -50,7 +50,7 @@ xcols=linspace(0,Breath,cols); %x-locations of columns
 AR=80; %Aspect ratio of elements  AR=xdim/ydim
 Dely=Delx/AR;% [m] Typical height of an element 37.5 m
 
-delt=100; % [days] Time step
+delt=500; % [days] Time step
 
 consea=1;  %Saturated Salt concentration in sea
 rhorel=1.025; %Relative density of saturated saline rhosat/rhowater
@@ -163,8 +163,8 @@ for tstep=1:totstep %Main time loop
             mnode=Btop(1,jj); % node number of top node
             %interpolation ratio
             yrat=(y(mnode)-y(mnode-1)-Dely)/(y(mnode)-y(mnode-1));
-            phi_insert(1,jj)=phi(mnode)-yrat*(phi(mnode)-phi(mnode-2));
-            con_insert(1,jj)=con(mnode)-yrat*(con(mnode)-con(mnode-2));
+            phi_insert(1,jj)=phi(mnode)-yrat*(phi(mnode)-phi(mnode-1));
+            con_insert(1,jj)=con(mnode)-yrat*(con(mnode)-con(mnode-1));
         end
     end
     
